@@ -1,0 +1,9 @@
+html
+  body
+    if name
+      h1 Welcome back #{name}!
+    else
+      Welcome stranger! What's your name? 
+      form(method="POST" action="/")
+        input(name="name" placeholder="Your name here") 
+        input(type="submit" value="Save my name!")
