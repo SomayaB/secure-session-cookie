@@ -1,11 +1,11 @@
 html
   body
-    if name
+    if first_name
       h1 Welcome back, #{first_name} #{last_name}. 
       p I bet your favorite color is #{favorite_color}!
     else
       h1 Welcome, stranger! Tell us about yourself.
-      form(action="POST" action="/")
+      form(method="POST" action="/")
         .input
           input(name="first_name" placeholder="First Name")
         .input

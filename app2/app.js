@@ -1,25 +1,26 @@
 const express = require('express')
-const app = express()
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
+
+const app = express()
 
 let port = process.env.PORT || 3000
 
 app.set('views', './views')
 app.set('view engine', 'pug')
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 
 app.get('/', (request, response) => {
-  const name = request.cookies.name
-  response.render('index', {name})
+  const userInfo = request.cookies.userInfo
+  response.render('index', userInfo)
 })
 
 app.post('/', (request, response) => {
-  const name = request.body.name
-  response.cookie('name', name)
-  response.render('index', {name})
+  const userInfo = request.body
+  response.cookie('userInfo', userInfo)
+  response.render('index', userInfo)
 })
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
