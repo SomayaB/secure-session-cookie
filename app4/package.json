@@ -1,0 +1,24 @@
+{
+  "name": "app4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cryptr": "^2.0.0",
+    "express": "^4.15.4",
+    "on-headers": "^1.0.1",
+    "pug": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
